@@ -1,12 +1,18 @@
 import React from 'react';
 
 import Routes from './routes';
+import {Provider} from 'react-redux';
+import store from './store';
 
 const App = () => {
   return (
-    <>
-      <Routes />
-    </>
+    //Provider deixa nossa store disponível pra toda á aplicação
+    //store é onde está todos os nossos reducers
+    <Provider store={store}>
+      <>
+        <Routes />
+      </>
+    </Provider>
   );
 };
 

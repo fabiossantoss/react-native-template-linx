@@ -2,8 +2,8 @@ import styled from 'styled-components/native';
 
 import {colors, metrics} from '~/styles';
 
-export const Title = styled.Text`
-  color: ${colors.primary};
+export const TextTemplate = styled.Text`
+  color: ${colors.black};
   font-weight: bold;
-  font-size: ${metrics.fontSize.big};
+  font-size: ${metrics.fontSize.medium};
 `;
