@@ -5,7 +5,18 @@
   "scripts": {
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "startrn": "react-native start",
+    "start:reset": "react-native start --reset-cache",
+    "android": "react-native run-android",
+    "android:release": "react-native run-android --variant=release",
+    "android:clean": "cd android && gradlew clean",
+    "android:bundleapk": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
+    "android:release:copyfile": "cd android && adb push  app/build/outputs/apk/release/app-release.apk /sdcard/Download",
+    "android:apk": "cd android && gradlew assembleRelease",
+    "ios": "react-native run-ios",
+    "recreate": "rm -rf android ios && react-native eject && react-native link",
+    "adb:reactotron": "adb reverse tcp:9090 tcp:9090"
   },
   "dependencies": {
     "axios": "^0.19.0",
@@ -15,10 +26,11 @@
     "react-native-gesture-handler": "^1.4.1",
     "react-navigation": "^3.12.0",
     "react-redux": "^7.1.1",
-    "reactotron-react-native": "^3.6.5",
+    "reactotron-redux": "^3.1.1",
     "redux": "^4.0.4",
     "redux-saga": "^1.0.5",
-    "styled-components": "^4.3.2"
+    "styled-components": "^4.3.2",
+    "reactotron-redux-saga": "^4.2.2"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
@@ -37,7 +49,7 @@
     "jest": "^24.9.0",
     "metro-react-native-babel-preset": "^0.56.0",
     "react-test-renderer": "16.8.6",
-    "reactotron-redux-saga": "^4.2.2"
+    "reactotron-react-native": "^3.6.5"
   },
   "jest": {
     "preset": "react-native"

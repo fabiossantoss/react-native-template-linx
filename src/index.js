@@ -6,8 +6,6 @@ import store from './store';
 
 const App = () => {
   return (
-    //Provider deixa nossa store disponível pra toda á aplicação
-    //store é onde está todos os nossos reducers
     <Provider store={store}>
       <>
         <Routes />
