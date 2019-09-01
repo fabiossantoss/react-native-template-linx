@@ -12,9 +12,6 @@ const sagaMiddleware = createSagaMiddleware({sagaMonitor});
 
 const middleware = [sagaMiddleware];
 
-console.log('Reactotron');
-console.log(Reactotron);
-
 const store = createStore(
   reducers,
   compose(
